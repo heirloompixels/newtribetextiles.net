@@ -3,7 +3,7 @@ layout: home
 title: home
 ---
 
-Explorers of that oldest and most useful art.
+Two explorers of that oldest and most useful art.
 
 Some things have happened in the world and it's a different place then it used to be.
 
