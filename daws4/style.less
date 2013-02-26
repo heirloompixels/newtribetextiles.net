@@ -1,0 +1,172 @@
+/*
+ * Mobile version (also IE) first
+*/
+
+// Generic
+body {
+}
+
+#siteheaderbanner { 
+  background-image: url(/grfx/tiles/pattern_022.gif);
+  border-bottom: 1px solid black;
+  margin-bottom: 2em;
+}
+#siteheader h1 {
+  font-size: 1.8em; 
+  padding: .3em 0; 
+}
+
+#basement {
+  margin-top: 3em; 
+  padding-top: 1.5em; 
+  border-top: 1px solid #ccc; 
+  background-image:  url(/grfx/tiles/pattern_034.gif); 
+}
+
+article header {
+  border-bottom: 1px solid #ccc; 
+  margin-bottom: 26px;
+}
+article header h1 {
+  margin-bottom: 0;
+}
+nav ul {
+  list-style: none; 
+  margin-left: 0; 
+}
+nav ul li {
+  margin: .25em 0; 
+  float: none; 
+}
+nav a {
+  color: black; 
+  font-size: 1.5em; 
+}
+
+#about, #adornment, #hauteCouture {
+  .row(); 
+  margin-top: 5em; 
+}
+article footer {
+  clear: both; 
+}
+
+#siteheader, #maincontent, #forms, #sitefooter, #examples, #featuresbenefits { 
+	.row();
+	.width(6);
+}
+
+.samplehtml, .samplecss { .col(); }
+
+body footer {
+  background-color: white; 
+  margin-top: 5em;
+  padding-top: 3em; 
+}
+#colophone {
+  clear: both; 
+  .width(8); 
+  margin: 0 auto; 
+}
+#colophone p {
+  font-size: .8em; 
+  color: #aaa; 
+}
+// Typography
+
+
+
+/*
+	Style overrides for IE6-8
+	http://jonikorpi.com/leaving-old-IE-behind/
+*/
+
+.ie {
+
+}
+
+
+// 800 and below
+@media screen and (max-width: 49.999em) {
+	body {
+		font-size: (@font-size - 2)/@em;
+	}
+}
+
+@media screen and (max-width: 115em) {
+	#basicexample, #responsiveexample { .row() }
+}
+
+// 800 and up
+@media screen and (min-width: 50em) {
+	#siteheader, #maincontent, #forms, #sitefooter, #featuresbenefits, #examples, #basicexample, #responsiveexample { .width(8); }
+
+	/* Index */
+	#theory, #opendawsis, #opendawsisnt, #benefits, #features { .col(); }
+	#opendawsisnt, #features { .gutter(); }
+
+	.samplehtml, .samplecss {.width(4); }
+	.samplecss { .gutter(); }
+
+	/* Demo */
+	#type, #elements { .col(); }
+
+	#elements, #textboxes { margin-left: @line-height*1px; }
+}
+
+
+// 800 to 1600 
+@media screen and (min-width: 50em)  and (max-width: 86em) {
+	#siteheader, #maincontent, #forms, #sitefooter, #featuresbenefits, #examples, #basicexample, #responsiveexample { .width(12); }
+
+	#type  { .width(12); }
+  #elements { .width(4);}
+  div.left, div.center, div.right {
+    .col();
+    .width(4); 
+  }
+  div.center, div.right {.gutter();} 
+
+  #about p, #about figure {
+    .col(); 
+    .width(6); 
+  }
+  #about figure {
+    .gutter(); 
+  }
+
+  footer nav {
+    .width(5); 
+    .col(); 
+    margin-left: @1col; 
+  }
+  footer #mailingList {
+    .width(5); 
+    .col(); 
+    .gutter(); 
+  }
+}
+
+@media screen and (min-width: 86em) and (max-width: 115em) {
+	
+
+	#siteheader, #maincontent, #forms, #sitefooter, #featuresbenefits, #examples, #basicexample, #responsiveexample { .width(18); }
+
+	#type { .width(12); }
+	#elements { .width(6); }
+}
+
+@media screen and (min-width: 115em) {
+	body {
+		font-size: (@font-size + 2)/@em;
+	}
+
+	
+
+	#siteheader, #maincontent, #forms, #sitefooter, #featuresbenefits, #examples { .width(21); }
+	#basicexample, #responsiveexample { .col(); .width(10.5); }
+	#responsiveexample { .gutter() }
+
+	#type  { .width(14); }
+	#elements  { .width(7); }
+}

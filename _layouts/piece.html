@@ -1,0 +1,20 @@
+---
+layout: galleria 
+---
+
+<article>
+
+  <div id="galleria">
+    {% for post in site.categories.pieces %}
+      {{ post.img }}
+    {% endfor %}
+  </div>
+  
+</article>
+
+  <script>
+    Galleria.loadTheme('/assets/js/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('#galleria');
+  </script>
+
+

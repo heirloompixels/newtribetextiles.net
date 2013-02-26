@@ -1,0 +1,808 @@
+@import 'helpful-LESS-functions.less';/*
+	Frameless			<http://framelessgrid.com/>
+	by Joni Korpi 		<http://jonikorpi.com/>
+	licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+*/
+
+@font-face {
+	font-family: 'Museo500';
+	src: url('/assets/fonts/museo500-regular-webfont.eot');
+	src: local('☺'), url('/assets/fonts/museo500-regular-webfont.woff') format('woff'), url('/assets/fonts/museo500-regular-webfont.ttf') format('truetype'), url('/assets/fonts/museo500-regular-webfont.svg#webfontg6VImpZg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-size: 17;
+@line: 24;
+@em: @font-size*1em;
+
+@column: 48;
+@gutter: 24;
+
+/* numbers 
+4cols: 264px; 
+6cols: 408px; 
+8cols: 552px; 
+12cols: 840px; 
+*/
+   @1col:( 1 * (@column + @gutter) - @gutter) / @em;
+  @1cols: @1col;
+  @2cols:( 2 * (@column + @gutter) - @gutter) / @em;
+  @3cols:( 3 * (@column + @gutter) - @gutter) / @em;
+  @4cols:( 4 * (@column + @gutter) - @gutter) / @em;
+  @5cols:( 5 * (@column + @gutter) - @gutter) / @em;
+  @6cols:( 6 * (@column + @gutter) - @gutter) / @em;
+  @7cols:( 7 * (@column + @gutter) - @gutter) / @em;
+  @8cols:( 8 * (@column + @gutter) - @gutter) / @em;
+  @9cols:( 9 * (@column + @gutter) - @gutter) / @em;
+@10cols: (10 * (@column + @gutter) - @gutter) / @em;
+@11cols: (11 * (@column + @gutter) - @gutter) / @em;
+@12cols: (12 * (@column + @gutter) - @gutter) / @em;
+@13cols: (13 * (@column + @gutter) - @gutter) / @em;
+@14cols: (14 * (@column + @gutter) - @gutter) / @em;
+@15cols: (15 * (@column + @gutter) - @gutter) / @em;
+@16cols: (16 * (@column + @gutter) - @gutter) / @em;
+
+.width (@cols:1) {
+	width: (@cols * (@column + @gutter) - @gutter) / @em;
+}
+.padding-left (@cols:1) {
+	padding-left: (@cols * (@column + @gutter) ) / @em;
+}
+.padding-right (@cols:1) {
+	padding-right: (@cols * (@column + @gutter) ) / @em;
+}
+
+.clearfix() {
+    zoom: 1;
+      &:before { content: ''; display: block; }
+        &:after { content: ''; display: table; clear: both; }
+}
+
+/*
+	Margin, padding, and border resets
+	except for form elements
+*/
+
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/*
+	Consistency fixes
+	adopted from http://necolas.github.com/normalize.css/
+*/
+
+html {
+	height: 100%; 
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%;
+}
+body {
+	min-height: 100%; 
+	font-size: 100%;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, nav, section, audio, canvas, video {
+	display: block;
+}
+sub, sup {
+	font-size: 75%; 
+	line-height: 0; 
+	position: relative; 
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+pre {
+	white-space: pre; 
+	white-space: pre-wrap; 
+	word-wrap: break-word;
+}
+b, strong {
+	font-weight: bold;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+input, textarea, button, select {
+	margin: 0;
+	font-size: 100%;
+	line-height: normal;
+	vertical-align: baseline;
+}
+button,
+html input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+input[type="checkbox"],
+input[type="radio"] {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+			box-sizing: border-box;
+}
+textarea {
+	overflow: auto;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a img, img {
+	-ms-interpolation-mode: bicubic;
+	border: 0;
+}
+
+
+/*
+	Type presets
+*/
+
+body {
+	font-size: @font-size / 16*1em;
+	line-height: @line / @em;
+	font-family: "Museo500", Futura, "Trebuchet MS", sans-serif;
+}
+
+.small {
+	font-size: 13/@em;
+	line-height: @line/13*1em;
+}
+
+.normal, h1, h2, h3, h4 {
+	font-size: 1em;
+}
+
+.big {
+	font-size: 23/@em;
+	line-height: 24/23*1em;
+}
+
+.large {
+	font-size: 56/@em;
+	line-height: 36/27*1em;
+}
+
+.huge {
+	font-size: 44/@em;
+	line-height: 48/44*1em;
+}
+
+.enormous {
+	font-size: 72/@em;
+	line-height: 72/72*1em;
+}
+
+.gigantic {
+	font-size: 116/@em;
+	line-height: 120/116*1em;
+}
+
+
+/*
+	Typography
+*/
+
+article p, #colophon p {
+	-webkit-hyphens: auto;
+	   -moz-hyphens: auto;
+			hyphens: auto;
+}
+
+
+h2 {
+	padding-top: 48/@em;
+}
+
+h3 {
+	margin-top: 24/@em;
+}
+
+h1,  h2, h3, #nav a {
+	font-weight: 500;
+}
+
+#masthead h1, h2 {
+	text-transform: uppercase;
+	letter-spacing: 1.1/@em;
+}
+
+#introduction h1, #follow h1 {
+	text-align: center;
+	font-style: italic;
+}
+
+
+
+/*
+	Colours & links
+*/
+
+@body: rgb(37,37,37);
+@emphasis: rgb(23,23,23);
+@aside: rgb(97,97,97);
+@background: rgb(255,255,255);
+@highlight: rgb(232,232,232);
+@link: rgb(232,76,56);
+
+body {
+	background: @background;
+	color: @body;
+	border-color: pink; 
+}
+
+h1, h2, h3, h4 {
+	color: @emphasis;
+}
+
+header p, #copyright p {
+	color: @aside;
+}
+
+a {
+	color: @emphasis;
+	text-decoration: none;
+	border-bottom: 1.1/@em solid @emphasis;
+}
+
+	#nav a {
+		border: 0;
+	}
+	
+	#copyright a {
+		color: @aside;
+		border-bottom-color: @aside;
+	}
+
+a:hover, #copyright a:hover {
+	color: @link;
+	border-bottom-color: @link;
+}
+
+	#nav a:hover, #nav a:hover .icon, #downloads a:hover strong {
+		background: @link;
+		color: @background;
+	}
+
+a:active {
+	color: @aside;
+	border-bottom-color: @aside;
+}
+
+	#copyright a:active {
+		color: @emphasis;
+		border-bottom-color: @emphasis;
+	}
+
+	#nav a:active, #nav a:active .icon, #downloads a:active strong {
+		background: @aside;
+	}
+
+::selection {
+	background: @link;
+	color: @background;
+}
+::-moz-selection {
+	background: @link;
+	color: @background;
+}
+img::selection {
+	background: transparent;
+}
+img::-moz-selection {
+	background: transparent;
+}
+body {
+	-webkit-tap-highlight-color: fadeout(@link, 62%);
+}
+
+
+/*
+	Typekit failsafe
+*/
+
+h1, h2, h3, p, #nav li {
+	visibility: visible;
+}
+
+.wf-loading h1, 
+.wf-loading h2, 
+.wf-loading h3, 
+.wf-loading p, 
+.wf-loading #nav li {
+	visibility: hidden;
+}
+
+
+/*
+	Common styles
+*/
+
+
+body { 
+  background-image url("/grfx/pattern_138.gif") top left repeat; 
+	border: 12px solid #252525;
+}
+
+
+#masthead, #introduction, article, article section, #colophon {
+	padding: 0 18/@em;
+	margin: 0 auto;
+	max-width: @8cols;
+}
+
+#masthead {
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+#topBox {
+  background-image: url("/assets/whiteTile.jpg"); 
+}
+#nav {
+	margin: 0 auto;
+  text-align: center; 
+}
+
+	#nav li {
+		list-style: none;
+		display: inline-block;
+		width: 48/@em;
+		margin-left: 24/@em;
+	}
+	
+		#nav li:first-child {
+			margin-left: 0;
+		}
+	
+	#nav a {
+		display: block;
+		text-align: center;
+	}
+	
+
+
+#otc #logo, #otc #boxEndGlobe, #otc #socketArrangement1 {
+  width: 100%; 
+}
+
+#colophon {
+	padding-top: 72/@em;
+}
+
+	#follow {
+		padding-bottom: 23/@em;
+		border-bottom: 2/@em dotted @highlight;
+		margin-bottom: 23/@em;
+	}
+
+	#colophon h2 {
+		padding: 0 0 12/@em;
+	}
+	
+	#colophon img {
+		width: 48/@em;
+		float: left;
+	}
+	
+	#author {
+		padding-bottom: 24/@em;
+	}
+	
+	#promo p, #author p {
+    padding-top: 16/@em;
+	}
+	
+	#copyright {
+		padding: 24/@em 0 48/@em;
+	}
+
+
+/*
+	Old IE fixes
+	http://jonikorpi.com/leaving-old-IE-behind/
+*/
+
+.ie #masthead, 
+.ie #introduction, 
+.ie article section, 
+.ie #colophon {
+	width: @8cols;
+}
+
+.ie #nav {
+	width: (48/@em) + @4cols;
+}
+
+.ie #nav li {
+	display: inline;
+}
+	
+.ie #nav li:first-child {
+	margin-left: 24/@em;
+}
+
+
+/*
+	Full page zooms
+	0.882352941 0.941176471 1.058823529 1.117647059
+*/
+
+@media screen and (max-width: 16.875em) {	
+	body {
+		font-size: (@font-size - 2)/16*1em;
+	}
+	#masthead, #introduction, article section, #colophon {
+		padding-left: 10/@em;
+		padding-right: 10/@em;
+	}
+}
+
+@media screen and (max-width: 19.9375em) {
+	body {
+		font-size: (@font-size - 1)/16*1em;
+	}
+}
+
+@media 
+	screen and (min-width: 32.5em) and (max-width: 37.4375em),
+	screen and (min-width: 45em) and (max-width: 56.9375em),
+	screen and (min-width: 77.5em) and (max-width: 102.4375em),
+	screen and (min-width: 135em) {
+	body {
+		font-size: (@font-size + 1)/16*1em;
+	}
+}
+
+@media 
+	screen and (min-width: 102.5em) and (max-width: 117.9375em),
+	screen and (min-width: 150em) {
+	body {
+		font-size: (@font-size + 2)/16*1em;
+	}
+}
+#galleria{ width: 100%; height: 400px; background: #fff }
+#piece img {
+  width: 100%; 
+}
+
+#blog {
+  .clearfix();
+  padding: 50px 0; 
+}
+#blog p { padding: 15px 0; }
+#blog img {width: 100%; }
+
+
+/*
+	Mobile layout 
+	240–479 px
+	Zoomed out below 320 px
+  4cols
+  264px
+*/
+
+@media screen and (min-width: 15em) {
+	
+	#masthead, #introduction, article,  article section, #colophon {
+		width: @4cols;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+#otc img {
+  width: @4cols; 
+}
+
+	
+#masthead {
+		border-bottom: 1px solid #ccc; 
+}
+#nav li {
+}
+	
+}
+
+
+/*
+	Wide mobile layout 
+	480-767 px
+	Zoomed in above 480 px
+  6cols
+  408px
+*/
+
+@media screen and (min-width: 30em) {
+	
+	#masthead, #introduction, article, article section, #colophon {
+		width: @6cols;
+	}
+	
+	#masthead h1, #masthead p, #introduction span, #follow span {
+		display: block;
+	}
+	
+	#nav {
+	}
+#otc img {
+  width: @6cols;
+}
+
+	
+}
+
+
+/*
+	Tablet layout 
+	600-911 px
+	Zoomed in above 600 px
+  8cols
+  552px
+*/
+
+@media screen and (min-width: 37.5em) {
+	
+	#masthead, #introduction, article, article section, #colophon {
+		width: @8cols;
+	}
+	
+	#masthead {
+		text-align: left;
+		position: relative;
+		padding-top: 36/@em;
+	}	
+	
+		#masthead h1 {
+			float: left;
+			margin-right: 4/@em;
+		}
+	
+		#masthead p {
+			width: @4cols;
+		}
+		
+		#nav {
+		}
+  #otc section {
+    .clearfix();
+    padding: 24/@em 0; 
+  }
+  #otc img#boxWrenchRollClosed, #otc img#boxWrenchRollOpen, 
+  #otc img#boxEndTops, #otc img#boxEndBottoms {
+    float: left; 
+    width: @4cols;
+    display: block;
+  }
+  img#boxEndTops, img#boxWrenchRollClosed {
+    margin-right: 24/@em; 
+  }
+  #otc img#pliers {
+    width: @8cols; 
+  }
+  img#needleNose, img#spanners, img#socketPile {
+    width: @4cols; 
+    margin: 0 (@2cols+24/@em); 
+  }
+
+	
+	article h2 {
+		.large();
+		letter-spacing: 1.1/27*1em;
+		padding-top: 72/27*1em;
+	}
+	
+	
+	#author, #promo {
+		width: @4cols;
+		float: left;
+	}
+	
+		#author {
+			padding: 0 24/@em 0 0;
+		}
+	
+	#copyright {
+		clear: both;
+	}
+	
+}
+
+
+/*
+	Widescreen layout 
+	912-1887 px
+	Zoomed in above 912 px
+  12cols 
+  840px 
+*/
+
+@media screen and (min-width: 57em) {
+	
+	#masthead, #introduction, article, article section, #colophon {
+		width: @12cols;
+	}
+#blog p { padding: 15px 0;
+  .padding-right(6); }
+#blog img {
+  float: right;
+  width: @6cols; 
+}
+
+
+
+#piece img {
+  width: @8cols; 
+  margin: 0 auto; 
+}
+
+
+	#masthead {
+		padding-top: 48/@em;
+	}
+	
+		#masthead h1 {
+			.huge();
+			width: auto;
+			letter-spacing: 2/44*1em;
+		}
+		
+		#masthead p {
+			position: absolute;
+			left: (24/@em)+@4cols; top: 48/@em;
+			width: @3cols;
+		}
+	
+		#nav {
+			top: 24/@em;
+		}
+			
+
+	#colophon {
+		margin-top: 72/@em;
+		border-top: 2/@em solid @emphasis;
+		padding-top: 22/@em;
+	}
+		
+		#follow {
+			float: left;
+			width: @4cols;
+			padding: 36/@em 24/@em 0 0;
+			border: 0;
+		}
+	
+			#follow h1 {
+				.normal();
+				text-align: left;
+			}
+			
+			#follow span {display: inline;}
+			
+		#copyright {
+			padding-left: @gutter/@em + @4cols;
+		}
+	
+}
+
+@media screen and (min-width: 57em) and (max-width: 117.9375em) {
+	
+	#downloads h3, #faq h3 {
+		float: left;
+		clear: left;
+		width: @4cols;
+		padding-top: 23/@em;
+	}
+	
+		#downloads p, #faq p {
+			padding-left: (24/@em)+@4cols;
+			margin-top: 24/@em;
+			border-top: 1.1/@em solid @highlight;
+			padding-top: 23/@em;
+		}
+	
+}
+
+
+/*
+	Huge-screen layout 
+	1888-2520 px
+	Zoomed in above 1920 px
+*/
+
+@media screen and (min-width: 118em) {
+
+	#masthead, article .container, #introduction, #colophon {
+		width: @13cols+@13cols+(24/@em);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+		article section {
+			width: @6cols;
+			margin-left: @1cols+(2*24/@em);
+			float: left;
+		}
+		
+			#build {
+				width: @12cols;
+				padding-bottom: 96/@em;
+				margin-left: 0;
+			}
+	
+	#masthead h1 {
+		.enormous();
+		letter-spacing: 2/72*1em;
+	}
+	
+	#masthead p {
+		.large();
+		top: 48/27*1em;
+		left: (6*(48+24))/27*1em;
+	}
+	
+	#introduction {
+		position: relative;
+		padding-top: 48/@em;
+		padding-bottom: 0;
+	}
+	
+		#introduction h1 {
+			.large();
+			position: absolute;
+			left: (13*(48+24))/27*1em;
+			top: -72/27*1em;
+			text-align: left;
+		}
+		
+	article h2 {
+		padding-top: 48/27*1em;
+	}
+	
+		
+	#colophon {
+		clear: both;
+	}
+	
+		#colophon section {
+			padding-bottom: 72/@em;
+		}
+	
+		#follow {
+			width: @6cols;
+			padding-top: 0;
+		}
+		
+			#follow h1 {
+				.large();
+				font-style: normal;
+			}
+	
+		#promo, #author {
+			width: @6cols;
+			padding-right: (2*24/@em)+@1col;
+		}
+		
+		#copyright {
+			float: left;
+			width: @6cols;
+			clear: none;
+			padding: 0;
+		}
+	
+}

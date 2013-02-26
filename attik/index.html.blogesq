@@ -1,0 +1,13 @@
+---
+layout: base
+title: New Tribe Textiles 
+description: Weavers are the answer!. 
+---
+
+<section id="blog">
+<article>
+    {% for post in site.categories.etsy limit:10 %}
+      <img src="{{post.img_square }}"/>
+    {% endfor %}
+</article>
+</section>
