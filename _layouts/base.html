@@ -1,77 +1,92 @@
+<!-- Trigger IE quirks mode -->
 <!doctype html>
 <!--[if lt IE 9]><html class="ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
-	
-	<head>
-		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		
-		<title>{{page.title}} &mdash; New Tribe Textiles</title>
-		
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+  <title>{{page.title}} &mdash; New Tribe Textiles</title>
+  <meta name="description" content="{{page.description}}"/>
 
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-		
-		<link rel="stylesheet/less" type="text/css" href="/assets/main.less"/>
-		<script src="/assets/js/less-1.3.1.min.js" type="text/javascript"></script>
-		
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		
-		<link rel="shortcut icon" href="assets/favicon.png"/>
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/icon.png"/>
-		
-    <meta name="description" content="{{page.description}}"/>
-	</head>
-	
-	<body lang="en">
-	  <div id="topBox">	
-		<header role="banner" id="masthead">
-			<nav role="navigation" id="nav">
-				<div id="logo">
-					<a href="/">New Tribe Textiles</a>
-				</div>
-			</nav>
-		</header>
+	<!-- Daws -->
+	<link rel="stylesheet/less" type="text/css" href="/daws4/compiled.less">
+	<link rel="stylesheet" type="text/css" href="/daws4/jqueryui.css">
+
+	<script type="text/javascript" src="/daws4/js/jquery-1.7.2.min.js"></script>
+	<!--[if (gte IE 6)&(lte IE 8)]>
+		<script type="text/javascript" src="js/selectivizr-min.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="/daws4/js/less-1.3.0.min.js"></script>
+
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-12210569-2']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+<div id="siteheaderbanner">
+  <header id="siteheader">
+	  <h1>New Tribe Textiles</h1>
+    <a href="https://twitter.com/newtribetextile" class="twitter-follow-button" data-show-count="false">Follow @newtribetextile</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </header>
+</div>
+
+<div id="maincontent">
+  {{ content }}    
+</div>    
+
+<div id="basement">
+<footer id="sitefooter">
+  <nav>
+    <ul>
+      <li><a href="http://tumblr.newtribetextiles.net" alt="New Tribe Textiles Tumblr Blog">Tumblr Blog</a></li>
+      <li>
+        <a href="http://newtribetextiles.etsy.com" alt="New Tribe Textiles Etsy Sho">Etsy Shop</a>
+      </li>
+      <li><a href="http://twitter.com/newtribetextile" alt="New Tribe Textiles twitter account: @newtribetextile">@newtribetextile</a></li>
+      <li><a href="/about" alt="About New Tribe Texitiles">About Us</a></li>
+      <li><a>Google Plus</a></li>
+    <li><a href="http://www.ravelry.com/people/newtribetextiles" alt="New Tribe Textiles Ralverly Profile">Ralverly</a></li>
+  </ul>
+  </nav>
+<div id="mailingList">
+  <p>
+  Some things have happened in the world and it’s a different place then it used to be.
+  </p>
+  <p>
+  Some things have to come again. Have to be remembered, known and loved again.
+  </p>
+  <p>
+  Textiles are some of the oldest forms of art known. We are just trying to figure out what they knew so long ago.
+  </p>
+    <div id="mc_embed_signup">
+      <form action="http://newtribetextiles.us5.list-manage.com/subscribe/post?u=91a807e8f62950eb2a1e91573&amp;id=9c50b100ee" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <label for="mce-EMAIL">Explore with us, join the mailing list:</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </form>
+    </div>
   </div>
-		
-	  {{ content }}    
-		
-		
-<footer id="colophon">
-    <section id="follow">
-        <h1>
-            <span><a href="http://twitter.com/newtribetextile/">Follow @newtribetexile on Twitter</a></span>.
-        </h1>
-    </section>
-    <section id="author">
-      <p>Nomadic Explorers. </p>
-      <p>We make things.</p>
-    </section>	
-    <section id="promo">	
-	<h2>Also check out</h2>
-        <p><a href="http://tumbler.sixsidedsheep.com">Six Sided Sheep Tumblr</a> &mdash; Saciate your textile cravings.</p>
-        <p><a href="http://newtribetextiles.etsy.com">newtribetextiles.etsy.com</a> &mdash; Our beutiful handcrafted textiles are for sale here.</p>
-        <p><a href="http://tumbler.newtribetextiles.com">New Tribe Textiles Tumblr</a> &mdash; Saciate your textile cravings.</p>
-    </section>	
-    <section id="copyright">
-	<p>All content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>.</p>
-    </section>
-					
-</footer>
-	
 
-<script>
-  var _gaq = [['_setAccount', 'UA-12210569-2'], ['_trackPageview']];
-  (function(d, t) {
-    var g = d.createElement(t),
-    s = d.getElementsByTagName(t)[0];
-    g.async = true;
-    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g, s);
-  })(document, 'script');
-</script>
+
+  <section id="colophone">
+	  <p>Created by heirloom pixels. Findable on all major search engines</p>
+    </section>
+</footer>
+</div>
+<script type="text/javascript" src="/daws4/js/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+<script type="text/javascript" src="/daws4/js/grid.js"></script>
 </body>
-	
 </html>
